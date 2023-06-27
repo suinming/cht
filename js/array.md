@@ -1,4 +1,4 @@
-# shift
+# Array.prototype.shift()
 
 ## Description
 
@@ -16,6 +16,8 @@ The removed element from the array; undefined if the array is empty.
 ## Example
 
 // EX1: removed the element from the array
+
+```js
 const myFish = ["angel", "clown", "mandarin", "surgeon"];
 
 console.log("myFish before:", myFish);
@@ -28,22 +30,26 @@ console.log("myFish after:", myFish);
 
 console.log("Removed this element:", shifted);
 // Removed this element: angel
+```
 
 // EX2: using shift method in while loop
+
+```js
 const names = ["Andrew", "Tyrone", "Paul", "Maria", "Gayatri"];
 
 while (typeof (i = names.shift()) !== "undefined") {
-console.log(i);
+  console.log(i);
 }
 // Andrew, Tyrone, Paul, Maria, Gayatri
+```
 
 =======================================================================
 
-# slice
+# Array.prototype.slice()
 
 ## Description
 
-1. The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included)
+1. The slice() method ==returns a shallow copy== of a portion of an array into a new array object selected from start to end (end not included)
 
 2. The slice() method is a copying method.
    It does not alter this but instead returns a shallow copy that contains some of the same elements as the ones from the original array.
@@ -74,15 +80,18 @@ A new array containing the extracted elements.
 ## Example
 
 // EX1: Return a portion of an existing array
+
+```js
 const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 const citrus = fruits.slice(1, 3);
 
 // fruits contains ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango']
 // citrus contains ['Orange','Lemon']
+```
 
 =======================================================================
 
-# splice
+# Array.prototype.splice()
 
 ## Description
 
@@ -129,32 +138,92 @@ If no elements are removed, an empty array is returned.
 ## Example
 
 // EX1: Remove 0 (zero) elements before index 2, and insert "drum" and "guitar"
+// 當 deleteCount 為 0 時，將 element 在 target element 前塞入
+
+```js
 const myFish = ["angel", "clown", "mandarin", "sturgeon"];
 const removed = myFish.splice(2, 0, "drum", "guitar");
-
 // myFish is ["angel", "clown", "drum", "guitar", "mandarin", "sturgeon"]
 // removed is [], no elements removed
+```
 
 // EX2: Remove 1 element at index 3
+
+```js
 const myFish = ["angel", "clown", "drum", "mandarin", "sturgeon"];
 const removed = myFish.splice(3, 1);
 
 // myFish is ["angel", "clown", "drum", "sturgeon"]
 // removed is ["mandarin"]
+```
 
 // EX3: Remove 1 element at index 2, and insert "trumpet"
+
+```js
 const myFish = ["angel", "clown", "drum", "sturgeon"];
 const removed = myFish.splice(2, 1, "trumpet");
-
 // myFish is ["angel", "clown", "trumpet", "sturgeon"]
 // removed is ["drum"]
+```
 
 // EX4: Remove all elements, starting from index 2
+
+```js
 const myFish = ["angel", "clown", "mandarin", "sturgeon"];
 const removed = myFish.splice(2);
 
 // myFish is ["angel", "clown"]
 // removed is ["mandarin", "sturgeon"]
+```
+
+=======================================================================
+
+# Array.from()
+
+## Description
+
+The Array.from() static method creates a new, shallow-copied "Array instance" from an iterable or array-like object.
+
+## Syntax
+
+Array.from(arrayLike)
+Array.from(arrayLike, mapFn)
+Array.from(arrayLike, mapFn, thisArg)
+
+1. arrayLike
+   An iterable or array-like object to convert to an array.
+
+2. mapFn Optional
+   A function to call on every element of the array.
+   If provided, every value to be added to the array is first passed through this function,
+   and mapFn's return value is added to the array instead.
+   The function is called with the following arguments:
+
+- element
+  The current element being processed in the array.
+- index
+  The index of the current element being processed in the array.
+
+3. thisArg Optional
+   Value to use as this when executing mapFn.
+
+## Return value
+
+A new Array instance.
+
+## Example
+
+// EX1: make sequence array from the array-like object
+
+```js
+Array.from({ length: 4 }, (value, index) => value); // [0,1,2,3]
+```
+
+// EX2: make range function
+
+```js
+const rangeFunction = (start, stop, step) => Array.from({length: (stop - start / step + 1)}, (_, index) => start + step \* index)
+```
 
 =======================================================================
 
@@ -167,5 +236,29 @@ const removed = myFish.splice(2);
 ## Return value
 
 ## Example
+
+// EX1:
+
+```js
+
+```
+
+=======================================================================
+
+#
+
+## Description
+
+## Syntax
+
+## Return value
+
+## Example
+
+// EX1:
+
+```js
+
+```
 
 =======================================================================
