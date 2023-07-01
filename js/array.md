@@ -227,6 +227,198 @@ const rangeFunction = (start, stop, step) => Array.from({length: (stop - start /
 
 =======================================================================
 
+# Array.prototype.every()
+
+## Description
+
+The every() method tests whether all elements in the array pass the test implemented by the provided function.
+It returns a Boolean value.
+
+The every() method is an iterative method.
+It calls a provided callbackFn function once for each element in an array,
+until the callbackFn returns a falsy value.
+If such an element is found, every() immediately returns false and stops iterating through the array.
+Otherwise, if callbackFn returns a truthy value for all elements, every() returns true.
+
+every acts like the "for all" quantifier in mathematics.
+In particular, for an empty array, it returns true.
+(It is vacuously true that all elements of the empty set satisfy any given condition.)
+
+## Syntax
+
+```js
+every(callbackFn);
+every(callbackFn, thisArg);
+```
+
+1. callbackFn
+   A function to execute for each element in the array.
+   It should return a truthy value to indicate the element passes the test,
+   and a falsy value otherwise.
+   The function is called with the following arguments:
+
+- element
+  The current element being processed in the array.
+
+- index
+  The index of the current element being processed in the array.
+
+- array
+  The array every() was called upon.
+
+2. thisArg Optional
+   A value to use as this when executing callbackFn. See iterative methods.
+
+## Return value
+
+true if callbackFn returns a truthy value for every array element. Otherwise, false.
+
+## Example
+
+// EX1: Check if one array is a subset of another array
+
+```js
+const isSubset = (array1, array2) =>
+  array2.every((element) => array1.includes(element));
+
+console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 7, 6])); // true
+console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 8, 7])); // false
+```
+
+// EX2: using every on spare array
+
+```js
+console.log([1, , 3].every((x) => x !== undefined)); // true
+console.log([2, , 2].every((x) => x === 2)); // true
+```
+
+// EX3: effecting the existing array(modifying, appending, deleting)
+
+```js
+// ---------------
+// Modifying items
+// ---------------
+let arr = [1, 2, 3, 4];
+arr.every((elem, index, arr) => {
+  arr[index + 1]--;
+  console.log(`[${arr}][${index}] -> ${elem}`);
+  return elem < 2;
+});
+
+// Loop runs for 3 iterations, but would
+// have run 2 iterations without any modification
+//
+// 1st iteration: [1,1,3,4][0] -> 1
+// 2nd iteration: [1,1,2,4][1] -> 1
+// 3rd iteration: [1,1,2,3][2] -> 2
+
+// ---------------
+// Appending items
+// ---------------
+arr = [1, 2, 3];
+arr.every((elem, index, arr) => {
+  arr.push("new");
+  console.log(`[${arr}][${index}] -> ${elem}`);
+  return elem < 4;
+});
+
+// Loop runs for 3 iterations, even after appending new items
+//
+// 1st iteration: [1, 2, 3, new][0] -> 1
+// 2nd iteration: [1, 2, 3, new, new][1] -> 2
+// 3rd iteration: [1, 2, 3, new, new, new][2] -> 3
+
+// ---------------
+// Deleting items
+// ---------------
+arr = [1, 2, 3, 4];
+arr.every((elem, index, arr) => {
+  arr.pop();
+  console.log(`[${arr}][${index}] -> ${elem}`);
+  return elem < 4;
+});
+
+// Loop runs for 2 iterations only, as the remaining
+// items are `pop()`ed off
+//
+// 1st iteration: [1,2,3][0] -> 1
+// 2nd iteration: [1,2][1] -> 2
+```
+
+=======================================================================
+
+# Array.prototype.find()
+
+## Description
+
+The find() method returns the first element in the provided array that satisfies the provided testing function.
+If no values satisfy the testing function, undefined is returned.
+callbackFn is invoked for every index of the array, not just those with assigned values.
+Empty slots in sparse arrays behave the same as undefined.
+
+## Syntax
+
+find(callbackFn)
+find(callbackFn, thisArg)
+
+1. callbackFn
+   A function to execute for each element in the array.
+   It should return a truthy value to indicate a matching element has been found, and a falsy value otherwise.
+   The function is called with the following arguments:
+
+- element
+  The current element being processed in the array.
+
+- index
+  The index of the current element being processed in the array.
+
+- array
+  The array find() was called upon.
+
+2. thisArg Optional
+   A value to use as this when executing callbackFn.
+
+## Return value
+
+The first element in the array that satisfies the provided testing function. Otherwise, undefined is returned.
+
+## Example
+
+// EX1: using find on sparse array
+
+```js
+// Declare array with no elements at indexes 2, 3, and 4
+const array = [0, 1, , , , 5, 6];
+
+// Shows all indexes, not just those with assigned values
+array.find((value, index) => {
+  console.log("Visited index", index, "with value", value);
+});
+// Visited index 0 with value 0
+// Visited index 1 with value 1
+// Visited index 2 with value undefined
+// Visited index 3 with value undefined
+// Visited index 4 with value undefined
+// Visited index 5 with value 5
+// Visited index 6 with value 6
+```
+
+// EX2: Calling find() on non-array objects
+
+```js
+const arrayLike = {
+  length: 3,
+  "-1": 0.1, // ignored by find() since -1 < 0
+  0: 2,
+  1: 7.3,
+  2: 4,
+};
+console.log(Array.prototype.find.call(arrayLike, (x) => !Number.isInteger(x)));
+// 7.3
+```
+
+=======================================================================
+
 #
 
 ## Description
