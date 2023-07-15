@@ -20,9 +20,8 @@ a new string is still returned (essentially a copy of str).
 
 ## Example
 
-// EX1: using the trim()
-
 ```js
+// EX1: using the trim()
 const str = "   foo  ";
 console.log(str.trim()); // 'foo'
 ```
@@ -39,10 +38,8 @@ console.log(str.trim()); // 'foo'
 
 ## Example
 
-// EX1:
-
 ```js
-
+// EX1:
 ```
 
 =======================================================================
@@ -57,10 +54,8 @@ console.log(str.trim()); // 'foo'
 
 ## Example
 
-// EX1:
-
 ```js
-
+// EX1:
 ```
 
 =======================================================================
@@ -75,10 +70,8 @@ console.log(str.trim()); // 'foo'
 
 ## Example
 
-// EX1:
-
 ```js
-
+// EX1:
 ```
 
 =======================================================================

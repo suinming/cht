@@ -2,7 +2,7 @@
 
 ## Description
 
-1. The shift() method removes the first element from an array and returns that removed element.
+1. The shift() method removes the first element from an array and ==returns that removed element==.
    This method changes the length of the array.
 
 ## Syntax
@@ -15,9 +15,8 @@ The removed element from the array; undefined if the array is empty.
 
 ## Example
 
-// EX1: removed the element from the array
-
 ```js
+// EX1: removed the element from the array
 const myFish = ["angel", "clown", "mandarin", "surgeon"];
 
 console.log("myFish before:", myFish);
@@ -32,9 +31,8 @@ console.log("Removed this element:", shifted);
 // Removed this element: angel
 ```
 
-// EX2: using shift method in while loop
-
 ```js
+// EX2: using shift method in while loop
 const names = ["Andrew", "Tyrone", "Paul", "Maria", "Gayatri"];
 
 while (typeof (i = names.shift()) !== "undefined") {
@@ -79,9 +77,8 @@ A new array containing the extracted elements.
 
 ## Example
 
-// EX1: Return a portion of an existing array
-
 ```js
+// EX1: Return a portion of an existing array
 const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 const citrus = fruits.slice(1, 3);
 
@@ -137,38 +134,28 @@ If no elements are removed, an empty array is returned.
 
 ## Example
 
+```js
 // EX1: Remove 0 (zero) elements before index 2, and insert "drum" and "guitar"
 // 當 deleteCount 為 0 時，將 element 在 target element 前塞入
-
-```js
 const myFish = ["angel", "clown", "mandarin", "sturgeon"];
 const removed = myFish.splice(2, 0, "drum", "guitar");
 // myFish is ["angel", "clown", "drum", "guitar", "mandarin", "sturgeon"]
 // removed is [], no elements removed
-```
 
 // EX2: Remove 1 element at index 3
-
-```js
 const myFish = ["angel", "clown", "drum", "mandarin", "sturgeon"];
 const removed = myFish.splice(3, 1);
 
 // myFish is ["angel", "clown", "drum", "sturgeon"]
 // removed is ["mandarin"]
-```
 
 // EX3: Remove 1 element at index 2, and insert "trumpet"
-
-```js
 const myFish = ["angel", "clown", "drum", "sturgeon"];
 const removed = myFish.splice(2, 1, "trumpet");
 // myFish is ["angel", "clown", "trumpet", "sturgeon"]
 // removed is ["drum"]
-```
 
 // EX4: Remove all elements, starting from index 2
-
-```js
 const myFish = ["angel", "clown", "mandarin", "sturgeon"];
 const removed = myFish.splice(2);
 
@@ -213,15 +200,11 @@ A new Array instance.
 
 ## Example
 
-// EX1: make sequence array from the array-like object
-
 ```js
+// EX1: make sequence array from the array-like object
 Array.from({ length: 4 }, (value, index) => value); // [0,1,2,3]
-```
 
 // EX2: make range function
-
-```js
 const rangeFunction = (start, stop, step) => Array.from({length: (stop - start / step + 1)}, (_, index) => start + step \* index)
 ```
 
@@ -275,26 +258,19 @@ true if callbackFn returns a truthy value for every array element. Otherwise, fa
 
 ## Example
 
-// EX1: Check if one array is a subset of another array
-
 ```js
+// EX1: Check if one array is a subset of another array
 const isSubset = (array1, array2) =>
   array2.every((element) => array1.includes(element));
 
 console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 7, 6])); // true
 console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 8, 7])); // false
-```
 
 // EX2: using every on spare array
-
-```js
 console.log([1, , 3].every((x) => x !== undefined)); // true
 console.log([2, , 2].every((x) => x === 2)); // true
-```
 
 // EX3: effecting the existing array(modifying, appending, deleting)
-
-```js
 // ---------------
 // Modifying items
 // ---------------
@@ -384,9 +360,8 @@ The first element in the array that satisfies the provided testing function. Oth
 
 ## Example
 
-// EX1: using find on sparse array
-
 ```js
+// EX1: using find on sparse array
 // Declare array with no elements at indexes 2, 3, and 4
 const array = [0, 1, , , , 5, 6];
 
@@ -401,11 +376,8 @@ array.find((value, index) => {
 // Visited index 4 with value undefined
 // Visited index 5 with value 5
 // Visited index 6 with value 6
-```
 
 // EX2: Calling find() on non-array objects
-
-```js
 const arrayLike = {
   length: 3,
   "-1": 0.1, // ignored by find() since -1 < 0
@@ -429,10 +401,8 @@ console.log(Array.prototype.find.call(arrayLike, (x) => !Number.isInteger(x)));
 
 ## Example
 
-// EX1:
-
 ```js
-
+// EX1:
 ```
 
 =======================================================================
@@ -447,10 +417,8 @@ console.log(Array.prototype.find.call(arrayLike, (x) => !Number.isInteger(x)));
 
 ## Example
 
-// EX1:
-
 ```js
-
+// EX1:
 ```
 
 =======================================================================

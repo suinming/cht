@@ -18,16 +18,19 @@ and the second element is the property value.
 
 ## Example
 
+```js
 // EX:1 iterating through the object
 // first solution
 const obj = { a: 5, b: 7, c: 9 };
 for (const [key, value] of Object.entries(obj)) {
-console.log(`${key} ${value}`); // "a 5", "b 7", "c 9"
+  console.log(`${key} ${value}`); // "a 5", "b 7", "c 9"
 }
 // second solution
 Object.entries(obj).forEach(([key, value]) => {
-console.log(`${key} ${value}`); // "a 5", "b 7", "c 9"
+  console.log(`${key} ${value}`); // "a 5", "b 7", "c 9"
 });
+```
+
 =======================================================================
 
 # Object.assign()
@@ -59,6 +62,7 @@ the target object
 
 ## Example
 
+```js
 // EX:1 cloning the object
 const obj = { a: 1 };
 const copy = Object.assign({}, obj);
@@ -91,17 +95,31 @@ const obj4 = structuredClone(obj3);
 obj3.a = 4;
 obj3.b.c = 4;
 console.log(obj4); // { a: 0, b: { c: 0 } }
+```
+
 =======================================================================
 
-#
+# Object.keys()
 
 ## Description
 
+The Object.keys() static method returns an array of a given object's own enumerable string-keyed property names.
+This is the same as iterating with a for...in loop,
+==except that a for...in loop enumerates properties in the prototype chain as well.==
+
 ## Syntax
+
+Object.keys(obj)
 
 ## Return value
 
+An array of strings representing the given object's own enumerable string-keyed property keys.
+
 ## Example
+
+```js
+
+```
 
 =======================================================================
 
