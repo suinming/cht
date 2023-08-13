@@ -1,19 +1,15 @@
+my current prefix => C-Space
+[oh-my-tmux doc](https://github.com/gpakosz/.tmux#bindings)
+
 # session
 
-## detach the session
-
-- `C-a d`
-
-## kill the session
-
-- `tmux kill-ses -t mysession`
+- create a new session `<prefix> C-c`
+- fuzzy find the session `<prefix> S`
 
 =======================================================================
 
 # window
 
-## close the current window
-
-- `C-a $`
+- navigate window `<prefix> C-h C-l`
 
 =======================================================================
