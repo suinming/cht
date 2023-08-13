@@ -115,11 +115,10 @@ trash-rm => remove individual files from the trashcan.
 
 =======================================================================
 
-#
+# update default node version globallly(node version manger, nvm)
 
-=======================================================================
-
-#
+- [nvm doc](https://github.com/nvm-sh/nvm#installing-and-updating)
+- `nvm alias default 18.16.1`
 
 =======================================================================
 

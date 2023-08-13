@@ -43,6 +43,46 @@ while (typeof (i = names.shift()) !== "undefined") {
 
 =======================================================================
 
+# Array.prototype.unshift()
+
+## Description
+
+The unshift() method adds the specified elements to the beginning of an array and returns the new length of the array.
+Please note that, if multiple elements are passed as parameters, they're inserted in chunk at the beginning of the object, in the exact same order they were passed as parameters.
+Hence, calling unshift() with n arguments once, or calling it n times with 1 argument (with a loop, for example), don't yield the same results.
+
+## Syntax
+
+unshift()
+unshift(element0)
+unshift(element0, element1)
+unshift(element0, element1, /_ … ,_/ elementN)
+
+## Return value
+
+The new length property of the object upon which the method was called.
+
+## Example
+
+```js
+// EX1:
+const arr = [1, 2];
+
+arr.unshift(0); // result of the call is 3, which is the new array length
+// arr is [0, 1, 2]
+
+arr.unshift(-2, -1); // the new array length is 5
+// arr is [-2, -1, 0, 1, 2]
+
+arr.unshift([-4, -3]); // the new array length is 6
+// arr is [[-4, -3], -2, -1, 0, 1, 2]
+
+arr.unshift([-7, -6], [-5]); // the new array length is 8
+// arr is [ [-7, -6], [-5], [-4, -3], -2, -1, 0, 1, 2 ]
+```
+
+=======================================================================
+
 # Array.prototype.slice()
 
 ## Description
@@ -387,6 +427,119 @@ const arrayLike = {
 };
 console.log(Array.prototype.find.call(arrayLike, (x) => !Number.isInteger(x)));
 // 7.3
+```
+
+=======================================================================
+
+# Array.prototype.indexOf()
+
+## Description
+
+The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+
+## Syntax
+
+indexOf(searchElement)
+indexOf(searchElement, fromIndex)
+
+1. searchElement
+   Element to locate in the array.
+2. fromIndex(optional)
+   Zero-based index at which to start searching, converted to an integer.
+   - Negative index counts back from the end of the array — if fromIndex < 0, fromIndex + array.length is used. Note, the array is still searched from front to back in this case.
+   - If fromIndex < -array.length or fromIndex is omitted, 0 is used, causing the entire array to be searched.
+   - If fromIndex >= array.length, the array is not searched and -1 is returned.ero-based index at which to start searching, converted to an integer.
+
+## Return value
+
+The first index of the element in the array; -1 if not found.
+
+## Example
+
+```js
+// EX1: using indexOf
+const array = [2, 9, 9];
+array.indexOf(2); // 0
+array.indexOf(7); // -1
+array.indexOf(9, 2); // 2
+array.indexOf(2, -1); // -1
+array.indexOf(2, -3); // 0
+
+// EX2: Finding all the occurrences of an element
+const indices = [];
+const array = ["a", "b", "a", "c", "a", "d"];
+const element = "a";
+let idx = array.indexOf(element);
+while (idx !== -1) {
+  indices.push(idx);
+  idx = array.indexOf(element, idx + 1);
+}
+console.log(indices);
+// [0, 2, 4]
+```
+
+=======================================================================
+
+#
+
+## Description
+
+## Syntax
+
+## Return value
+
+## Example
+
+```js
+// EX1:
+```
+
+=======================================================================
+
+#
+
+## Description
+
+## Syntax
+
+## Return value
+
+## Example
+
+```js
+// EX1:
+```
+
+=======================================================================
+
+#
+
+## Description
+
+## Syntax
+
+## Return value
+
+## Example
+
+```js
+// EX1:
+```
+
+=======================================================================
+
+#
+
+## Description
+
+## Syntax
+
+## Return value
+
+## Example
+
+```js
+// EX1:
 ```
 
 =======================================================================

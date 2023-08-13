@@ -118,7 +118,56 @@ An array of strings representing the given object's own enumerable string-keyed 
 ## Example
 
 ```js
+// EX1: 
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+};
 
+console.log(Object.keys(object1));
+// Expected output: Array ["a", "b", "c"]
+```
+
+=======================================================================
+
+# Object.hasOwn()
+
+## Description
+
+The Object.hasOwn() static method returns true if the specified object has the indicated property as its own property
+even if the property value is null or undefined.
+If the property is _inherited_, or does not exist, the method returns false.
+
+## Syntax
+
+Object.hasOwn(obj, prop)
+
+1. obj
+   The JavaScript object instance to test.
+2. prop
+   The String name or Symbol of the property to test.
+
+## Return value
+
+true if the specified object has directly defined the specified property. Otherwise false
+
+## Example
+
+```js
+// EX1: Direct vs. inherited properties
+const example = {};
+example.prop = "exists";
+
+// `hasOwn` will only return true for direct properties:
+Object.hasOwn(example, "prop"); // true
+Object.hasOwn(example, "toString"); // false
+Object.hasOwn(example, "hasOwnProperty"); // false
+
+// The `in` operator will return true for direct or inherited properties:
+"prop" in example; // true
+"toString" in example; // true
+"hasOwnProperty" in example; // true
 ```
 
 =======================================================================
@@ -133,4 +182,86 @@ An array of strings representing the given object's own enumerable string-keyed 
 
 ## Example
 
+```js
+// EX1:
+```
+
 =======================================================================
+
+#
+
+## Description
+
+## Syntax
+
+## Return value
+
+## Example
+
+```js
+// EX1:
+```
+
+=======================================================================
+
+#
+
+## Description
+
+## Syntax
+
+## Return value
+
+## Example
+
+```js
+// EX1:
+```
+
+=======================================================================
+
+#
+
+## Description
+
+## Syntax
+
+## Return value
+
+## Example
+
+```js
+// EX1:
+```
+
+=======================================================================
+
+#
+
+## Description
+
+## Syntax
+
+## Return value
+
+## Example
+
+```js
+// EX1:
+```
+
+=======================================================================
+
+#
+
+## Description
+
+## Syntax
+
+## Return value
+
+## Example
+
+```js
+// EX1:
+```
