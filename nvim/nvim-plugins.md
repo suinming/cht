@@ -77,7 +77,14 @@
 
 =======================================================================
 
-#
+# comment
+
+- `gcc` line-comment the cuurent line
+- `gcb` block-comment the cuurent line
+- `gc` line-comment the block in **visual mode**
+- `gb` block-comment the block in **visual mode**
+- `gc{n}j` line-comment the code for the following n lines
+- `gb{n}j` block-comment the code for the following n lines
 
 =======================================================================
 

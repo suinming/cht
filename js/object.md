@@ -118,11 +118,11 @@ An array of strings representing the given object's own enumerable string-keyed 
 ## Example
 
 ```js
-// EX1: 
+// EX1:
 const object1 = {
-  a: 'somestring',
+  a: "somestring",
   b: 42,
-  c: false
+  c: false,
 };
 
 console.log(Object.keys(object1));
@@ -172,18 +172,69 @@ Object.hasOwn(example, "hasOwnProperty"); // false
 
 =======================================================================
 
-#
+# Object.defineProperty()
 
 ## Description
 
+The Object.defineProperty() static method defines a new property directly on an object, or modifies an existing property on an object,
+and returns the object.
+
 ## Syntax
 
+Object.defineProperty(obj, prop, descriptor)
+
+1. obj
+   The object on which to define the property.
+2. prop
+   A string or Symbol specifying the key of the property to be defined or modified.
+3. descriptor
+   Property descriptors present in objects come in two main flavors: data descriptors and accessor descriptors.
+
+   - A _data descriptor_ is a property with a value that may or may not be writable.
+
+     - configurable
+     - enumerable
+     - value
+     - writable
+
+   - An _accessor descriptor_ is a property described by a getter-setter pair of functions.
+     - configurable
+     - enumerable
+     - get
+     - set
+
+   A descriptor must be one of these two flavors; it cannot be both.
+
 ## Return value
+
+The object that was passed to the function(before you add the prop)
 
 ## Example
 
 ```js
-// EX1:
+// EX1: use defineProperty to define the props in person object
+const person = {
+  name: "frank",
+};
+// use the data descriptor
+Object.defineProperty(person, "gender", {
+  configurable: true,
+  enumerable: true,
+  writable: true,
+  value: "male",
+});
+console.log(person);
+// use the accessor descriptor
+Object.defineProperty(person, "age", {
+  configurable: true,
+  enumerable: true,
+  get: () => this.value,
+  set: (_value) => (this.value = _value),
+});
+// use setter to set the age
+person.age = 25;
+console.log(person);
+console.log(person.age);
 ```
 
 =======================================================================
