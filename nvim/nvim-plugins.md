@@ -77,6 +77,18 @@
 
 =======================================================================
 
+# telescope-undo
+
+- # `<leader>fu` show the undo tree
+
+=======================================================================
+
+# ufo
+
+- `za` toggle the code block
+
+=======================================================================
+
 # comment
 
 - `gcc` line-comment the cuurent line
@@ -85,10 +97,6 @@
 - `gb` block-comment the block in **visual mode**
 - `gc{n}j` line-comment the code for the following n lines
 - `gb{n}j` block-comment the code for the following n lines
-
-=======================================================================
-
-#
 
 =======================================================================
 
