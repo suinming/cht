@@ -7,6 +7,9 @@
   2.  `<leader>rj` //2 is the target branch(_i.e. master branch_)
   3.  `<leader>rk` //3 is the merge branch(_i.e. feature branch_)
   4.  `:only` to see the result
+  5.  `]c` to next conflict
+  6.  `[c` to previous conflict
+  7.  `:diffupdate` sync the merge result 
 
 =======================================================================
 
