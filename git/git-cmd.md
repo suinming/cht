@@ -99,7 +99,7 @@ pick 11ce0ab34 fix: Fix spelling.
 # git tags 使用備忘錄
 
 - tagging is generally used to capture a point in history that is used for a ==marked version release==
-- create tag 
+- create tag
   1.  `git tag <tag name>` create a lightweight tag
   2.  `git tag -a <tag name> <commit SHA1> -m <some tag message>` create a annotated tag(it will also create a blob in .git/objects)
 - list tags `git tag`
@@ -117,7 +117,19 @@ pick 11ce0ab34 fix: Fix spelling.
 
 =======================================================================
 
-#
+# git worktree
+
+- `gcw <SSH or URL> <bare repo name>` clone the git bare repo by using the
+  script(bare repo do not have any content unless you add the worktree)
+- `git clone — bare <SSH or URL> <bare repo name>` clone the git bare
+  repo(bare repo do not have any content unless you add the worktree)
+- `git worktree list` listing worktree
+- `git worktree add <branch name>` create a worktree of a certain branch
+- `git worktree add -b <new branch name> <worktree name>` create a new
+  worktree for the new branch
+- `git worktree add <worktree name> <branch name>` add worktree based on
+  remote branch
+- `git worktree remove <worktree name>` remove a worktree
 
 =======================================================================
 

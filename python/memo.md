@@ -174,6 +174,8 @@ finally:
 
 # api request
 
+1. get request
+
 ```python
 import requests as req
 url_params = {
@@ -184,6 +186,24 @@ res = req.get("your url", params=url_params)
 res.raise_for_status()
 data = res.json()
 print(data)
+```
+
+2. post request
+
+```python
+body ={
+    "id": GRAPH_ID,
+    "name":"Coding Graph",
+    "unit":"commit",
+    "type":"int",
+    "color":"sora"
+}
+
+headers = {
+    "X-USER-TOKEN": API_TOKEN
+}
+res = requests.post(f"{BASE_URL}/users/{USER_NAME}/graphs", json=body, headers=headers)
+print(res.text) # check if the post request is success
 ```
 
 =======================================================================

@@ -71,6 +71,8 @@ sudo apt install path.to.the.deb
 
 # install nvim from source
 
+1. for no prerequisites
+
 ```shell
 git clone https://github.com/neovim/neovim.git
 
@@ -88,6 +90,14 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo
 cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 
 # install the package
+sudo make install
+```
+
+2. have prerequisites
+
+```shell
+gco v9.x.x
+make CMAKE_BUILD_TYPE=Release
 sudo make install
 ```
 
