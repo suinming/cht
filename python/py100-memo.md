@@ -252,15 +252,82 @@ def police_check(age: int) ->bool:
 
 =======================================================================
 
-#
+# web scraping BeautifulSoup template
+
+```python
+import requests as req
+from bs4 import BeautifulSoup
+import lxml
+
+# get the html
+website_url = "url ..."
+res = req.get(website_url, headers={"User-Agent":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0",
+                                    "Accept-Language":"en-US,en;q=0.5"}).text
+print(res.prettify())
+
+# get the target content you want by using BeautifulSoup
+# the first arg in BeautifulSoup is the response html text
+# the second arg in BeautifulSoup is the parser
+# the parser can be html.parser or lxml(need to install)
+soup = BeautifulSoup(res, 'lxml')
+# METHOD-1: use find method to select the target content
+price = soup.find(class_="a-offscreen").get_text()
+
+# METHOD-2: use css selector to select the target content
+price = soup.css.select(".a-offscreen")[0].get_text()
+
+```
 
 =======================================================================
 
-#
+# web scraping selenium template
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from time import sleep
+
+
+class Bot:
+
+    def __init__(self):
+        # keep the chrome driver open after the program finish
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_experimental_option("detach", True)
+        # incognito mode
+        chrome_options.add_argument("--incognito")
+        # set up the driver for chrome browser
+        self.driver = webdriver.Chrome(options=chrome_options)
+
+    def your_fn(self):
+        self.driver.find_element(By.ID, "css id")
+        self.driver.find_element(By.CLASS_NAME, "css class")
+        self.driver.find_element(By.XPATH, "xpath")
+
+```
 
 =======================================================================
 
-#
+# decorator function
+
+- concept:
+  decorator function是function，用function作為input argument裝飾input
+  function，並回傳調整後的function作為return，使得重複的邏輯得以重複使用。
+
+```python
+import time
+
+def delay_decorator(function): # 將function當作input argument
+    def wrapper_function():
+        time.sleep(2)
+    return wrapper_function # 回傳裝飾完畢的function
+
+# decorator function的syntatic sugar即加上'@'做前綴，裝飾下方的function
+@delay_decorator
+def say_hello():
+    print("Hello")
+```
 
 =======================================================================
 

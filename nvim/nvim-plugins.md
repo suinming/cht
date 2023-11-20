@@ -24,18 +24,6 @@
 
 =======================================================================
 
-# vim.bookmarks
-
-- `mi` add the annotation to the book mark
-- `mm` add/remove the book mark
-- `ma` show all the book mark
-- `mc` clear the book marks in current buffer
-- `mx` clear all the book marks in current buffer
-- `mp` to previous book mark
-- `mn` to next book mark
-
-=======================================================================
-
 # nvim-surround
 
 - [doc](https://github.com/kylechui/nvim-surround/blob/main/doc/nvim-surround.txt)
@@ -50,7 +38,7 @@
 
 - `<leader>a` => add to harpoon
 - `<C-e>` => toggle the harpoon menu
-- `<leader>s, d, f, j, k, l` => nav files
+- `<leader>s, d,  j, k ` => navigate files
 
 =======================================================================
 
