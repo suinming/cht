@@ -108,7 +108,7 @@ for (index, row) in student_data_frame.iterrows():
 # many positional arguments
 
 ```python
-# the args is the tuple
+# the args is the tuple => (arg1, arg2, arg3, ...)
 def add(*args):
   sum = 0
   for num in args:
@@ -316,30 +316,126 @@ class Bot:
   function，並回傳調整後的function作為return，使得重複的邏輯得以重複使用。
 
 ```python
-import time
+def logging_decorator(fn):
+  def wrapper(*args):
+    print(f"You called {fn.__name__}({args[0]}, {args[1]}, {args[2]})")
+    print(f"It returned: {fn(args[0],args[1], args[2])}")
+  return wrapper
 
-def delay_decorator(function): # 將function當作input argument
-    def wrapper_function():
-        time.sleep(2)
-    return wrapper_function # 回傳裝飾完畢的function
+@logging_decorator
+def a_function(a, b, c):
+  return a * b * c
 
-# decorator function的syntatic sugar即加上'@'做前綴，裝飾下方的function
-@delay_decorator
-def say_hello():
-    print("Hello")
+a_function(1, 2, 3)
+# You called a_function(1, 2, 3)
+# It returned: 6
 ```
 
 =======================================================================
 
-#
+# setup flask app
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def root():
+    return "<h1>This is the root route</h1>"
+
+
+# you can get the query variable in the url
+@app.route("/<int:random_number>")
+def root(random_number):
+    num = random_number + 2
+    return num
+
+# start the flask app and open the debug mode
+if __name__ == "__main__":
+    app.run(debug=True)
+```
 
 =======================================================================
 
-#
+# render html and css file in flask server
+
+## the structure of the file
+
+You have to create two folders due to flask Doc,
+first one is **templates folder** which holds the html file
+second one is **static folder** which holds images or css files
+
+- static
+  - images
+    - image-1.png
+  - css
+    - style.css
+- templates
+  - index.html
+
+```python
+from flask import Flask
+from flask import render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def root():
+    # render the index.html file in the templates folder
+    return render_template('index.html')
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
 
 =======================================================================
 
-#
+# jinja template
+
+```python
+# the input of the html file is posts
+post = [
+    {
+        "id": 1
+        "title": "title-1",
+        "subtitle": "subtitle-1",
+        "body": "body-1",
+    },
+    {
+        "id": 2
+        "title": "title-2",
+        "subtitle": "subtitle-2",
+        "body": "body-2",
+    },
+]
+
+# index.html
+    {% for post in posts %}
+        <div class="content">
+            <div class="card">
+                <h2>{{ post["title"] }}</h2>
+                <p class="text">{{ post["subtitle"] }}</p>
+                # you can use the url_for function to different route
+                # you can also send the keyword arguments in url_for
+                <a href="{{ url_for('blog', id = post['id'] - 1) }}">Read</a>
+            </div>
+        </div>
+    {% endfor %}
+```
+
+=======================================================================
+
+# python requirement file to manage package
+
+[requirement file explain](https://docs.google.com/document/d/e/2PACX-1vRIW_TuZ6z0ASjAoxgJgmzjGYLCDx019tKvphaTwK_Za7fnMKywUuXI0-s5wr0nQI_gprm6J6y7L9rL/pub)
+
+=======================================================================
+
+# flask wtForm with bootstrap
+
+day61
+有完整的範例(projectName wtForm in Pycharm dir)如何用wtForm完成表單與表單驗證，並配合bootstrap讓程式簡潔界面漂亮
 
 =======================================================================
 

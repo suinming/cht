@@ -106,6 +106,20 @@ pick 11ce0ab34 fix: Fix spelling.
 - delete tag
   1.  `git tag -d <tag name>` delete a local tag
   2.  `git push --delete origin <tag name>` delete a remote tag
+  3.  ``
+- delete all tags
+
+```shell
+# Delete local tags.
+git tag -d $(git tag -l)
+# Fetch remote tags.
+git fetch
+# Delete remote tags.
+git push origin --delete $(git tag -l) # Pushing once should be faster than multiple times
+# Delete local tags.
+git tag -d $(git tag -l)
+```
+
 - push tag
   1.  `git push origin <tag name>` push a local tag to remote
   2.  `git push --tags` push multiple tag
