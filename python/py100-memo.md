@@ -439,6 +439,32 @@ day61
 
 =======================================================================
 
-#
+# access index in for loop in jinja template
+
+- use loop.index0 to access the current index value in for loop
+
+```python
+	  <table class="table table-dark table-striped table-hover">
+          {% for cafe in cafes %}
+              {% if loop.index0 == 0 %}
+                  <thead>
+                    <tr>
+                        {% for col in cafe %}
+                            <th colspan="2">{{ col }}</th>
+                        {% endfor %}
+                    </tr>
+                  </thead>
+              {% else %}
+                  <tbody>
+                    <tr>
+                        {% for col in cafe %}
+                            <th colspan="2">{{ col }}</th>
+                        {% endfor %}
+                    </tr>
+                  </tbody>
+              {% endif %}
+          {% endfor %}
+  	  </table>
+```
 
 =======================================================================
