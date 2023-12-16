@@ -1,4 +1,6 @@
-# change local and remote branch name
+# change branch name
+
+## change both remote and local branch name
 
 ```shell
 # Rename the local branch to the new name
@@ -17,6 +19,18 @@ git push <remote> <new_name>
 git push <remote> -u <new_name>
 ```
 
+## change only remote branch name
+
+`git push <remote> <remote>/<old_name>:refs/heads/<new_name>
+:<old_name>`
+=======================================================================
+
+# delete branch
+
+## delete remote branch
+
+`git push <remote> -d <branch_name>` delete the remote branch
+
 =======================================================================
 
 # git ignore not working
@@ -30,7 +44,7 @@ gitignore 的檔案若已經 commit 的話，gitignore 並不會生效，目前 
 
 =======================================================================
 
-# git change commit message
+# change commit message
 
 there are three conditions :
 
@@ -83,10 +97,11 @@ pick 11ce0ab34 fix: Fix spelling.
 
 =======================================================================
 
-# 回覆索引區的檔案狀態
+# restore
 
 ## condition-1 將加到索引區的文件回覆到modified的狀態，並復原修改前的工作區
 
+- `git restore ./` 將工作區(還沒add)的所有文件復原到修改前的狀態
 - `git restore <filename>` 將工作區(還沒add)的文件復原到修改前的狀態
 - `git restore --staged <filename>` 將索引區(已經add)的文件復原到上一次commit的SHA1值
 
@@ -96,7 +111,7 @@ pick 11ce0ab34 fix: Fix spelling.
 
 =======================================================================
 
-# git tags 使用備忘錄
+# tags
 
 - tagging is generally used to capture a point in history that is used for a ==marked version release==
 - create tag
@@ -106,7 +121,6 @@ pick 11ce0ab34 fix: Fix spelling.
 - delete tag
   1.  `git tag -d <tag name>` delete a local tag
   2.  `git push --delete origin <tag name>` delete a remote tag
-  3.  ``
 - delete all tags
 
 ```shell
@@ -131,19 +145,16 @@ git tag -d $(git tag -l)
 
 =======================================================================
 
-# git worktree
+# worktree
 
 - `gcw <SSH or URL> <bare repo name>` clone the git bare repo by using the
   script(bare repo do not have any content unless you add the worktree)
 - `git clone — bare <SSH or URL> <bare repo name>` clone the git bare
   repo(bare repo do not have any content unless you add the worktree)
-- `git worktree list` listing worktree
-- `git worktree add <branch name>` create a worktree of a certain branch
-- `git worktree add -b <new branch name> <worktree name>` create a new
-  worktree for the new branch
-- `git worktree add <worktree name> <branch name>` add worktree based on
-  remote branch
-- `git worktree remove <worktree name>` remove a worktree
+- `gwl` listing worktree
+- `gwa <branch name>` create a worktree on a existing branch
+- `gwa ./<branch name>` create a worktree based on a certain branch
+- `gwl` list all worktree
 
 =======================================================================
 
