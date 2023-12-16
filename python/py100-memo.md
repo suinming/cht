@@ -347,8 +347,15 @@ def root():
 
 # you can get the query variable in the url
 @app.route("/<int:random_number>")
-def root(random_number):
+def query(random_number):
     num = random_number + 2
+    return num
+
+# you can get the params in the url
+# i.e. /search?num=5
+@app.route("/search")
+def parmas():
+    num = request.args.get('num')
     return num
 
 # start the flask app and open the debug mode
@@ -543,13 +550,22 @@ with app.app_context():
 # CRUD in SQLAlchemy
 
 ```python
-## Create a new record
+## 1. Create a new record
+# create a new record
     with app.app_context():
-        new_book = Book(id=1, title="Harry Potter", author="J. K. Rowling", rating=9.3)
+        new_book = Book(title="Harry Potter", author="J. K. Rowling", rating=9.3)
         db.session.add(new_book)
         db.session.commit()
 
-## Read record/records
+# create a new record from form data
+    with app.app_context():
+        new_book = Book(title=request.form.get("title"), author=request.form.get("author"), rating=request.form.get("rating"))
+        db.session.add(new_book)
+        db.session.commit()
+
+###################################
+
+## 2. Read record/records
 # read all records
     with app.app_context():
         result = db.session.execute(db.select(Book).order_by(Book.title))
@@ -559,7 +575,9 @@ with app.app_context():
         result = db.session.execute(db.select(Book).order_by(Book.title).where(Books.title == "Harry Potter"))
         book = result.scalar()
 
-## Update a record
+###################################
+
+## 3. Update a record
 # update by query
     with app.app_context():
         book_to_update = db.session.execute(db.select(Book).where(Book.title == "Harry Potter")).scalar()
@@ -572,7 +590,10 @@ with app.app_context():
         # or book_to_update = db.get_or_404(Book, book_id)
         book_to_update.title = "Harry Potter and the Goblet of Fire"
         db.session.commit()
-## Delete a record
+
+###################################
+
+## 4. Delete a record
     book_id = 1
     with app.app_context():
         book_to_delete = db.session.execute(db.select(Book).where(Book.id == book_id)).scalar()
