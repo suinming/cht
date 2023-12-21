@@ -121,7 +121,7 @@ pick 11ce0ab34 fix: Fix spelling.
 - delete tag
   1.  `git tag -d <tag name>` delete a local tag
   2.  `git push --delete origin <tag name>` delete a remote tag
-- delete all tags
+- delete all tags `git tag -d $(git tag -l) && git fetch && git push origin --delete $(git tag -l) && git tag -d $(git tag -l)`
 
 ```shell
 # Delete local tags.
