@@ -314,10 +314,15 @@ class Bot:
 - concept:
   decorator function是function，用function作為input argument裝飾input
   function，並回傳調整後的function作為return，使得重複的邏輯得以重複使用。
+  **常常和functools中的wrap一起使用**
 
 ```python
+from functools import wraps
+from flask import abort
+
+# ex1
 def logging_decorator(fn):
-  def wrapper(*args):
+  def wrapper(*args, **kwargs):
     print(f"You called {fn.__name__}({args[0]}, {args[1]}, {args[2]})")
     print(f"It returned: {fn(args[0],args[1], args[2])}")
   return wrapper
@@ -329,6 +334,15 @@ def a_function(a, b, c):
 a_function(1, 2, 3)
 # You called a_function(1, 2, 3)
 # It returned: 6
+
+# ex2
+def admin_only(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if current_user.id == 1:
+            return f(*args, **kwargs)
+        return abort(403)
+    return decorated_function
 ```
 
 =======================================================================

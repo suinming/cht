@@ -115,7 +115,7 @@ pick 11ce0ab34 fix: Fix spelling.
 
 - tagging is generally used to capture a point in history that is used for a ==marked version release==
 - create tag
-  1.  `git tag <tag name>` create a lightweight tag
+  1.  `git tag <tag name> <commit SHA1>` create a lightweight tag
   2.  `git tag -a <tag name> <commit SHA1> -m <some tag message>` create a annotated tag(it will also create a blob in .git/objects)
 - list tags `git tag`
 - delete tag
@@ -158,11 +158,28 @@ git tag -d $(git tag -l)
 
 =======================================================================
 
-#
+# revert and reset
+
+1. `git revert HEAD`
+   新增一個新的commit，並回到前一個commit的狀態（並沒有竄改歷史）
+
+示意圖：
+c1 <- c2(HEAD)
+下完指令
+c1 <- c2 <- c2'(HEAD)  
+c2'的狀態為c1
+
+2. `git reset HEAD~1` 刪除最近的一個commit（已竄改歷史）
+
+示意圖：
+c1 <- c2(HEAD)
+下完指令
+c1(HEAD) 
+c2 即被刪除
 
 =======================================================================
 
-#
+# interactive rebase
 
 =======================================================================
 
