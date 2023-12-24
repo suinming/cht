@@ -58,77 +58,29 @@
 .lha  
 壓縮：lha -a FileName.lha FileName  
 解壓：lha -e FileName.lha
+
 =======================================================================
 
-# install .deb package
+# install deb package
+
+1. remember to type in the full path of the deb package
+2. type in `./` is important to specify the location
 
 ```shell
-# remember to type in the full path of the deb package
-sudo apt install path.to.the.deb
+sudo apt install ./path.to.the.deb
 ```
 
 =======================================================================
 
-# install nvim from source
-
-1. for no prerequisites
-
-```shell
-git clone https://github.com/neovim/neovim.git
-
-cd neovim
-
-# checkout the stable version of neovim
-git checkout stable
-
-# to the build dir
-cd build
-
-make CMAKE_BUILD_TYPE=RelWithDebInfo
-
-# This should help ensuring the clean removal of installed files
-cpack -G DEB && sudo dpkg -i nvim-linux64.deb
-
-# install the package
-sudo make install
-```
-
-2. have prerequisites
-
-```shell
-gco v9.x.x
-make CMAKE_BUILD_TYPE=Release
-sudo make install
-```
+#
 
 =======================================================================
 
-# trash-cli
-
-trash-put ( alias is tp) => trash files and directories.
-trash-empty ( alias is tm) => empty the trashcan(s).
-trash-list ( alias is tl) => list trashed files.
-trash-restore => restore a trashed file.
-trash-rm => remove individual files from the trashcan.
+#
 
 =======================================================================
 
-# i3 window manager
-
-## daily i3 cmd
-
-- execute app => $mod + d
-- full screen => $mode + f
-- reload config file => $mod + shift + c
-- quit the window => $mode + shift + q
-- log out => $mode + shift + e
-
-=======================================================================
-
-# update default node version globallly(node version manger, nvm)
-
-- [nvm doc](https://github.com/nvm-sh/nvm#installing-and-updating)
-- `nvm alias default 18.16.1`
+#
 
 =======================================================================
 
