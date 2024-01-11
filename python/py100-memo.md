@@ -46,6 +46,29 @@ print(nemo.tail_length)
 
 =======================================================================
 
+# list slicing
+
+```python
+list = [0, 1, 2, 3, 4, 5, 6]
+
+# using the vector to slice the list
+# it includes the lower limit but
+# excludes the upper limit
+print(list[0:2])
+
+# using the negative index to slice the list from the end
+print(list[:-1])
+print(list[:-2])
+
+# slice the list by step, where step=2
+print(list[::2])
+
+# reverse the list
+print(list[::-1])
+```
+
+=======================================================================
+
 # list comprehension
 
 ```python
