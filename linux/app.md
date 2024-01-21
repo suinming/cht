@@ -93,15 +93,12 @@ trash-rm => remove individual files from the trashcan.
 
 # 中文輸入法
 
-[安裝無蝦米的教學文](https://ithelp.ithome.com.tw/articles/10257501?sc=rss.qu)
+[fcitx5 chewing](https://ivonblog.com/posts/ubuntu-fcitx5/)
+[fcitx5 安裝無蝦米](https://samwhelp.github.io/note-about-ubuntu/read/subject/im/fcitx5/howto/install-fcitx5-table-boshiamy.html)
 
-```shell
-sudo apt install fcitx
-sudo apt install fcitx-table-boshiamy
-sudo apt install fcitx-chewing
-```
+可能需要的操作:
 
-1. 安裝完fcitx 與輸入法後，要**重新開機**
+1. 安裝完fcitx5 與輸入法後，可能要**重新開機**
 2. 在setting>region&language（地區與語言）> mangage installed languages > keyboard input method system > change to fcitx4 (not ibus)
 3. 將 booshiamy and chewing 加入到input，切記不要用查找的，他們會在列表的最下方，用滾輪拉到底就可以
 
@@ -164,10 +161,22 @@ font_size 16.0
 
 =======================================================================
 
+# calibre library
+
+1. wireless transfer book to kobo ereader
+   - [video](https://www.youtube.com/watch?v=2emONkbCWUA&list=WL&index=47)
+   - wireless device connection in calibre library - kobo setting > connect - go to calibre library and send the book to device
+
+=======================================================================
+
 #
 
 =======================================================================
 
-```
+#
 
-```
+=======================================================================
+
+#
+
+=======================================================================
