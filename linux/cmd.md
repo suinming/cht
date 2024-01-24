@@ -87,11 +87,14 @@ sudo apt install ./path.to.the.deb
 
 # screen(really like the concept of tmux)
 
+[ref](https://kawsing.gitbook.io/opensystem/andoid-shou-ji/untitled-4/linux-cli/yong-screen-guan-li-duo-zhong-duan)
+
 ## when you are outside the screen
 
-1. `screen -S <screen_name>` create a screen
-2. `screen -ls` list all the screen
+1. `screen -S <screen_name>` create a screen session
+2. `screen -ls` list all the screen session
 3. `screen -XS <screen_id> quit` kill the screen by id
+4. `screen -r <screen_id>` reattach to the screen session, i.e. screen -r 17851
 
 ## when you are inside the screen
 
