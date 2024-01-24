@@ -72,11 +72,33 @@ sudo apt install ./path.to.the.deb
 
 =======================================================================
 
-#
+# check/kill the process by pid
+
+## check process
+
+1. `ps aux | grep -i <process_name>` fetch all the information of the process, -i flag means case incensitive
+2. `pgrep <process_name>` get the process id only(useful when you want to kill the process)
+
+## kill the process
+
+1. `pkill <pid>` kill the process by pid
 
 =======================================================================
 
-#
+# screen(really like the concept of tmux)
+
+## when you are outside the screen
+
+1. `screen -S <screen_name>` create a screen
+2. `screen -ls` list all the screen
+3. `screen -XS <screen_id> quit` kill the screen by id
+
+## when you are inside the screen
+
+1. `<C-a>c` create a window in the screen session
+2. `<C-a>0~9` switch to certain window
+3. `<C-a>w` window list(the asterisk point out the current window)
+4. `<C-a>d` detach the current screen session
 
 =======================================================================
 
