@@ -169,7 +169,10 @@ font_size 16.0
 
 =======================================================================
 
-#
+# pyenv and pyenv-virtualenv
+
+1. [how to install pyenv in zsh and bash](https://medium.com/@b10932006/%E5%A6%82%E4%BD%95%E5%9C%A8ubuntu%E4%B8%AD%E5%AE%89%E8%A3%9Dpyenv%E4%B8%A6%E4%BD%BF%E7%94%A8%E5%A4%9A%E7%A8%AE%E7%89%88%E6%9C%AC%E7%9A%84python-6626c1fbc76e)
+2. [pyenv-virtualenv github](https://github.com/pyenv/pyenv-virtualenv)
 
 =======================================================================
 
