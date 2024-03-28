@@ -217,6 +217,33 @@ c2 即被刪除
 
 =======================================================================
 
+# git clone specific folder from repo
+
+[source article](https://blog.miniasp.com/post/2022/05/17/Down-size-your-Monorepo-with-Git-Sparse-checkouts)
+
+## step1 clone the repo
+
+`git clone --depth 1 --filter=blob:none --no-checkout --sparse <CLONE URL> <YOUR REPO NAME> `
+`cd <REPO DIR>`
+
+## step2 set cone mode
+
+`git sparse-checkout set --cone`
+
+## step3 checkout branch
+
+`git checkout <TARGET BRANCH>`
+
+## step3 cloning the specific folder
+
+`git sparse-checkout set <SPECIFIC DIR>`
+
+=======================================================================
+
+#
+
+=======================================================================
+
 #
 
 =======================================================================
