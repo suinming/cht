@@ -187,3 +187,7 @@ font_size 16.0
 1. [step by step guide](https://www.cyberciti.biz/faq/linux-kvm-libvirt-dnsmasq-dhcp-static-ip-address-configuration-for-guest-os/)
 
 =======================================================================
+
+# use yadm to manage dotfiles
+
+1. [是時候同步你的 dotfiles 了——我選擇 yadm ](https://blog.kyomind.tw/yadm/)
