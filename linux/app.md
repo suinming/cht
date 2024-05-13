@@ -182,6 +182,8 @@ font_size 16.0
 
 =======================================================================
 
-#
+# virt-manager set the static ip for virtual machine
+
+1. [step by step guide](https://www.cyberciti.biz/faq/linux-kvm-libvirt-dnsmasq-dhcp-static-ip-address-configuration-for-guest-os/)
 
 =======================================================================

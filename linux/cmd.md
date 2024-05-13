@@ -105,11 +105,10 @@ sudo apt install ./path.to.the.deb
 
 =======================================================================
 
-#
+# Copy file contents to the clipboard in Linux terminal
 
-=======================================================================
-
-#
+1. `sudo apt install xclip`
+2. `xclip -sel c < input_file.txt` (c stand for clipboard)
 
 =======================================================================
 
