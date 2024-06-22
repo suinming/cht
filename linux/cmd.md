@@ -112,6 +112,72 @@ sudo apt install ./path.to.the.deb
 
 =======================================================================
 
+# curl cmd
+
+[article source](https://www.cjkuo.net/linux-curl-detail/)
+
+curl <options> <URL>
+-A/--user-agent <string> 設定使用者代理發送給伺服器
+-b/--cookie <name=string/file> cookie字串或檔案讀取位置
+-c/--cookie-jar <file> 操作結束後把cookie寫入到這個檔案中
+-C/--continue-at <offset> 斷點續轉
+-d/--data "data"攜帶 HTTP POST Data
+-D/--dump-header <file> 把header資訊寫入到該檔案中
+-e/--referer 來源網址
+-f/--fail 連線失敗時不顯示http錯誤
+-F/用來向主機上傳二進制文件，可以指定MIME 類型，也可以指定文件名
+-H/--header 設定 request 裡所攜帶的 header
+-i/--include 在 output 顯示 response 的 header
+-k：指定跳过 SSL 檢測
+-L：会让 HTTP 请求跟随服务器的重定向。curl 默认不跟随重定向
+--limit-rate：用来限制 HTTP 请求和回应的带宽，模拟慢网速的环境
+-o/--output 把輸出寫到該檔案中，等同於wget指令
+-O/--remote-name 把輸出寫到該檔案中,保留遠端檔案的檔名
+-r/--range <range> 檢索來自HTTP/1.1或FTP伺服器位元組範圍
+--resolve HOST:PORT:ADDRESS 強制將 HOST:PORT 解析到指定的IP ADDRESS
+-s/--silent 靜音模式。不輸出任何東西
+-T/--upload-file <file> 上傳檔案
+-u/--user <user[:password]> 設定伺服器的使用者和密碼
+-v/--verbose 輸出更多的訊息方便 debug
+-w/--write-out [format] 什麼輸出完成後
+-x/--proxy <host[:port]> 在給定的埠上使用HTTP代理
+-X/--request [GET|POST|PUT|DELETE|PATCH] 使用指定的 http method 來發出 http request
+-#/--progress-bar 進度條顯示當前的傳送狀態
+
+=======================================================================
+
+# Static IP assignment for KVM guest
+
+[article_link](https://dyiwu.github.io/2020/06/kvm-guest-dhcp-ip/)
+
+=======================================================================
+
+# copy file between local pc and server
+
+- on my local pc, copy the file from `local pc` to `server`:
+  `scp /path_on_local/to/destination_dir root@<server_ip>:/path_on_server/to/target.file`
+
+- on my local pc, copy the file from `server` to `local pc`:
+  `scp root@<server_ip>:/path_on_server/to/target.file /path_on_local/to/destination_dir`
+
+=======================================================================
+
+#
+
+=======================================================================
+
+#
+
+=======================================================================
+
+#
+
+=======================================================================
+
+#
+
+=======================================================================
+
 #
 
 =======================================================================

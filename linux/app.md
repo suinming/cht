@@ -21,37 +21,14 @@
 
 # neovim
 
-## install nvim from source
+[nvim build doc](https://github.com/neovim/neovim/blob/master/BUILD.md)
 
-1. for no prerequisites
+## install nvim from source(make sure you got all the require dependencies)
 
-```shell
-git clone https://github.com/neovim/neovim.git
-
-cd neovim
-
-# checkout the stable version of neovim
-git checkout stable
-
-# to the build dir
-cd build
-
-make CMAKE_BUILD_TYPE=RelWithDebInfo
-
-# This should help ensuring the clean removal of installed files
-cpack -G DEB && sudo dpkg -i nvim-linux64.deb
-
-# install the package
-sudo make install
-```
-
-2. have prerequisites
-
-```shell
-git checkout v9.x.x
-make CMAKE_BUILD_TYPE=Release
-sudo make install
-```
+1. clone the neovim repo(if you do not have the repo) `git clone --depth=1 link`
+2. fetch the specific version `git fetch origin tag v0.xx.xx --no-tags`
+3. make `cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo`
+4. install neovim `sudo make install`
 
 =======================================================================
 
