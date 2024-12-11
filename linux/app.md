@@ -172,16 +172,17 @@ font_size 16.0
 
 =======================================================================
 
-# use yadm to manage dotfiles
+# virt-manager share the directories between host and vm
 
-1. # [是時候同步你的 dotfiles 了——我選擇 yadm ](https://blog.kyomind.tw/yadm/)
+1. [step-by-step-article](https://blog.sergeantbiggs.net/posts/file-sharing-with-qemu-and-virt-manager/)
+
+`sudo mount -t virtiofs share /home/foo/share` the command should be typed every time open the vm to sync two directories
 
 =======================================================================
 
-# install koreader on kobo
+# use yadm to manage dotfiles
 
-- [download OCP-KOReader-v2024.07.zip and install script](https://www.mobileread.com/forums/showthread.php?t=314220)
-- [video tutorial](https://www.youtube.com/watch?v=rEouRrPKj-c)
+1. # [是時候同步你的 dotfiles 了——我選擇 yadm ](https://blog.kyomind.tw/yadm/)
 
 =======================================================================
 
