@@ -174,9 +174,18 @@ font_size 16.0
 
 # virt-manager share the directories between host and vm
 
+## vm is linux
+
 1. [step-by-step-article](https://blog.sergeantbiggs.net/posts/file-sharing-with-qemu-and-virt-manager/)
 
-`sudo mount -t virtiofs share /home/foo/share` the command should be typed every time open the vm to sync two directories
+`sudo mount -t virtiofs <dir_name> /home/suinming/<dir_name>` the command should be typed every time open the vm to sync two directories
+
+
+## vm is windows10
+
+[tutorial](https://www.youtube.com/watch?v=oVHkvx9ZLJc&t=0s)
+
+1. on windows vm need to install [winfsp](https://winfsp.dev/) , [virtio driver](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/)
 
 =======================================================================
 
