@@ -142,7 +142,9 @@ font_size 16.0
 
 1. wireless transfer book to kobo ereader
    - [video](https://www.youtube.com/watch?v=2emONkbCWUA&list=WL&index=47)
-   - wireless device connection in calibre library - kobo setting > connect - go to calibre library and send the book to device
+   - wireless device connection in calibre library 
+     - in calibre libray app, go to top bar and click connect/share, select `wireless device connection`  
+     - in kobo ereader, go to top bar and click on setting, click the first option `Calibre`, click the first option `Connect`
 
 =======================================================================
 
