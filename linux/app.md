@@ -142,8 +142,8 @@ font_size 16.0
 
 1. wireless transfer book to kobo ereader
    - [video](https://www.youtube.com/watch?v=2emONkbCWUA&list=WL&index=47)
-   - wireless device connection in calibre library 
-     - in calibre libray app, go to top bar and click connect/share, select `wireless device connection`  
+   - wireless device connection in calibre library
+     - in calibre libray app, go to top bar and click connect/share, select `wireless device connection`
      - in kobo ereader, go to top bar and click on setting, click the first option `Calibre`, click the first option `Connect`
 
 =======================================================================
@@ -182,12 +182,11 @@ font_size 16.0
 
 `sudo mount -t virtiofs <dir_name> /home/suinming/<dir_name>` the command should be typed every time open the vm to sync two directories
 
-
 ## vm is windows10
 
 [tutorial](https://www.youtube.com/watch?v=oVHkvx9ZLJc&t=0s)
 
-1. on windows vm need to install [winfsp](https://winfsp.dev/) , [virtio driver](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/)
+1. on windows vm need to install [winfsp](https://winfsp.dev/) , [stable-virtio/virtio-win-guest-tools.exe](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/)
 
 =======================================================================
 
